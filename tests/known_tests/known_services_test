@@ -1,0 +1,5 @@
+# @TEST-EXEC: /usr/local/zeek/bin/zeek -C -r $TRACES/known_services_test.pcap ../../../scripts %INPUT
+# @TEST-EXEC: cat known_services.log | grep fields > fields.txt
+# @TEST-EXEC: btest-diff known_services.log
+
+redef Site::local_nets += {192.168.1.0/24};
